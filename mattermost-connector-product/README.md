@@ -4,7 +4,7 @@ Dear developer!
 When you create your very valuable documentation, please be aware that this Readme.md is not only published on github. This documentation is also processed automatically and published on our website. For this to work, the two headings "Demo" and "Setup" must not be changed
 -->
 
-# MY-PRODUCT-NAME
+# Mattermost Connector
 
 YOUR DESCRIPTION GOES HERE: Please just give a short description here without further headings.
 
