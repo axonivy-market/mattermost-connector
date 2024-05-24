@@ -1,1 +1,13 @@
 RestClients:
+  #There is also a work-in-progress [Postman API reference](https://documenter.getpostman.com/view/4508214/RW8FERUn).
+  Mattermost API (Mattermost API Reference):
+    UUID: 402ef8e2-8431-4198-b4c7-be6000e557c9
+    Url: ${ivy.var.mattermost.baseUrl}
+    Features:
+    - com.axonivy.connector.mattermost.auth.MattermostAuthFeature
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    Properties:
+      AUTH.accessToken: ${ivy.var.mattermost.accessToken}
+    OpenAPI:
+      SpecUrl: file:///C:/Users/phhung/Downloads/openapi%20(3).json
+      Namespace: com.your.mattermost.url.client

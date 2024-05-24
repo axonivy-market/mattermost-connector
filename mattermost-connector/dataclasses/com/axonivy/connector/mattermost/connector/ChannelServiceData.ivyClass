@@ -1,0 +1,5 @@
+ChannelServiceData #class
+com.axonivy.connector.mattermost.connector #namespace
+channelId String #field
+channel com.your.mattermost.url.client.Channel #field
+error ch.ivyteam.ivy.bpm.error.BpmError #field

@@ -1,0 +1,52 @@
+{
+  "format" : "10.0.0",
+  "id" : "18F953D50A711458",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "com.axonivy.connector.mattermost.connector.demo.TeamAbsences.TeamAbsencesData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "callSignature" : "start",
+        "result" : {
+          "params" : [
+            { "name" : "message", "type" : "String" }
+          ],
+          "map" : {
+            "result.message" : "in.message"
+          }
+        },
+        "guid" : "18F953D50A7ED10A"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "18F953D50A9D7F2B"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 }
+      },
+      "connect" : { "id" : "f5", "to" : "f4" }
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 160 }
+      }
+    } ]
+}

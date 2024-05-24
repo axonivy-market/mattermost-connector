@@ -1,2 +1,3 @@
 Data #class
 com.axonivy.connector.mattermost.connector.demo #namespace
+result List<com.your.mattermost.url.client.ChannelMember> #field

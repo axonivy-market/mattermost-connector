@@ -1,0 +1,4 @@
+TeamAbsencesData #class
+com.axonivy.connector.mattermost.connector.demo.TeamAbsences #namespace
+message String #field
+message PERSISTENT #fieldModifier
