@@ -3,7 +3,7 @@
   "id" : "18F9924575E237AD",
   "kind" : "CALLABLE_SUB",
   "config" : {
-    "data" : "com.axonivy.connector.mattermost.connector.GetIncomingWebhookByChannelIdData"
+    "data" : "com.axonivy.connector.mattermost.connector.IncomingWebhookData"
   },
   "elements" : [ {
       "id" : "f0",

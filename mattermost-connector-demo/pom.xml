@@ -14,6 +14,15 @@
       <type>iar</type>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>maven.axonivy.com</id>
+      <url>https://maven.axonivy.com</url>
+    </repository>
+  </repositories>
   <build>
     <plugins>
       <plugin>
@@ -24,11 +33,4 @@
       </plugin>
     </plugins>
   </build>
-  <repositories><repository>
-	<id>maven.axonivy.com</id>
-	<url>https://maven.axonivy.com</url>
-	<snapshots>
-		<enabled>true</enabled>
-	</snapshots>
-</repository></repositories>
 </project>

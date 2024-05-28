@@ -11,7 +11,7 @@ public class ChannelService {
 		Map<String, Object> params = new HashMap<>();
 		params.put("channelId", channelId);
 		Map<String, Object> response = IvyAdapterService
-				.startSubProcessInApplication("getChannelById(java.lang.String)", "ChannelService", params);
+				.startSubProcessInApplication("getChannelById(java.lang.String)", "connector/Channel", params);
 		return (Channel) response.get("channel");
 	}
 }

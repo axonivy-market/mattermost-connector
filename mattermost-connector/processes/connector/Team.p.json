@@ -3,14 +3,22 @@
   "id" : "18F9AA4D04244482",
   "kind" : "CALLABLE_SUB",
   "config" : {
-    "data" : "com.axonivy.connector.mattermost.connector.TeamServiceData"
+    "data" : "com.axonivy.connector.mattermost.connector.TeamData"
   },
   "elements" : [ {
       "id" : "f0",
       "type" : "CallSubStart",
-      "name" : "getTeamId()",
+      "name" : "getTeamId(String)",
       "config" : {
         "callSignature" : "getTeamId",
+        "input" : {
+          "params" : [
+            { "name" : "teamName", "type" : "String" }
+          ],
+          "map" : {
+            "out.teamName" : "param.teamName"
+          }
+        },
         "result" : {
           "params" : [
             { "name" : "teamId", "type" : "String" }
@@ -22,14 +30,15 @@
         "tags" : "connector"
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 64 }
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 17, "y" : 33 }
       },
       "connect" : { "id" : "f3", "to" : "f5" }
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
       "visual" : {
-        "at" : { "x" : 400, "y" : 64 }
+        "at" : { "x" : 384, "y" : 64 }
       }
     }, {
       "id" : "f5",
@@ -44,12 +53,12 @@
           "out.teamId" : "result.id"
         },
         "templateParams" : {
-          "name" : "ivy.var.mattermost_teamName"
+          "name" : "in.teamName"
         },
         "resultType" : "com.your.mattermost.url.client.Team"
       },
       "visual" : {
-        "at" : { "x" : 256, "y" : 63 },
+        "at" : { "x" : 240, "y" : 63 },
         "size" : { "width" : 128, "height" : 63 }
       },
       "boundaries" : [ {
@@ -64,9 +73,9 @@
             }
           },
           "visual" : {
-            "at" : { "x" : 320, "y" : 96 }
+            "at" : { "x" : 304, "y" : 96 }
           },
-          "connect" : { "id" : "f8", "to" : "f1", "via" : [ { "x" : 400, "y" : 96 } ] }
+          "connect" : { "id" : "f8", "to" : "f1", "via" : [ { "x" : 384, "y" : 96 } ] }
         } ],
       "connect" : { "id" : "f2", "to" : "f1" }
     } ]

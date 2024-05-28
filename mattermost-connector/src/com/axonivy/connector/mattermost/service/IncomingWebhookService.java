@@ -24,8 +24,8 @@ public class IncomingWebhookService {
 		params.put("teamId", teamId);
 		params.put("channelId", channelId);
 		Map<String, Object> response = IvyAdapterService.startSubProcessInApplication(
-				"getIncomingWebhookByTeamIdAndChannelId(java.lang.String,java.lang.String)", "IncomingWebhookService",
-				params);
+				"getIncomingWebhookByTeamIdAndChannelId(java.lang.String,java.lang.String)",
+				"connector/IncomingWebhook", params);
 		return (IncomingWebhook) response.get("incomingWebhook");
 	}
 

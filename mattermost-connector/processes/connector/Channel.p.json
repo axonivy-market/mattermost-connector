@@ -3,7 +3,7 @@
   "id" : "18F9A02E199B10A5",
   "kind" : "CALLABLE_SUB",
   "config" : {
-    "data" : "com.axonivy.connector.mattermost.connector.ChannelServiceData"
+    "data" : "com.axonivy.connector.mattermost.connector.ChannelData"
   },
   "elements" : [ {
       "id" : "f0",

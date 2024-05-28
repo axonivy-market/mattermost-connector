@@ -1,4 +1,4 @@
-GetIncomingWebhookByChannelIdData #class
+IncomingWebhookData #class
 com.axonivy.connector.mattermost.connector #namespace
 channelId String #field
 teamId String #field
