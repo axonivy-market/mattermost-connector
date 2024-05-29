@@ -6,13 +6,13 @@
 # '<project>/Config/_<environment>/variables.yaml
 #
 Variables:
+#  myVariable: value
   mattermost:
-    baseUrl: ""
-    accessToken: ""
-    teamName: ""
-    botName: ""
-    notification:
-      # enables the Mattermost notification for new tasks
-      enabled: true
-      # the message of new task will be sent to channel
-      newTaskMessage: "The new task %s is created."
+    # The base URL of matter most
+    baseUrl: "http://localhost:8065"
+    # Personal access tokens function similarly to session tokens and can be used by integrations to authenticate against the REST API.
+    accessToken: "b89ygqfd3bydprsnqjyn89m8tw"
+    # The team name
+    teamName: "axonivy"
+    # The name of bot that will inform the task on the channel
+    botName: "axonivy-bot"
