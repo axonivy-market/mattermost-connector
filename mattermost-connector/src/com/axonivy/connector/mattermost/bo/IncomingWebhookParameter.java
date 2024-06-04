@@ -29,10 +29,6 @@ public class IncomingWebhookParameter {
 	@QueryParam("props")
 	private String props;
 
-	public IncomingWebhookParameter() {
-		super();
-	}
-
 	public IncomingWebhookParameter(String channel, String text) {
 		super();
 		this.channel = channel;

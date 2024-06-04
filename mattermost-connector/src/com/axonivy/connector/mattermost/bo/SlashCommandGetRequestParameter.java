@@ -2,7 +2,7 @@ package com.axonivy.connector.mattermost.bo;
 
 import javax.ws.rs.QueryParam;
 
-public class SlashCommandGetRequestParams {
+public class SlashCommandGetRequestParameter {
 	@QueryParam("channel_id")
 	private String channelId;
 	

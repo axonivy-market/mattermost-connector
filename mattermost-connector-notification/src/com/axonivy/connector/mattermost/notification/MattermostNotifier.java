@@ -8,7 +8,6 @@ import com.axonivy.connector.mattermost.listener.NewTaskAssignmentListener;
 import com.axonivy.connector.mattermost.service.ChannelService;
 import com.axonivy.connector.mattermost.service.IncomingWebhookService;
 import com.axonivy.connector.mattermost.service.TeamService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.your.mattermost.url.client.Channel;
 import com.your.mattermost.url.client.IncomingWebhook;
 
@@ -38,32 +37,33 @@ public class MattermostNotifier extends NewTaskAssignmentListener {
 	private void notifyToChannel(ITask newTask) {
 		String channelId = newTask.getCase().customFields().stringField(CustomField.CHANNEL_ID.getFieldName())
 				.getOrDefault(StringUtils.EMPTY);
-		try {
-			String teamId = TeamService.getTeamId();
-			if (StringUtils.isBlank(teamId)) {
-				return;
-			}
 
-			IncomingWebhook webhook = IncomingWebhookService.getIncommingWebhookId(channelId, teamId);
-			if (webhook == null || StringUtils.isBlank(webhook.getId())) {
-				return;
-			}
-
-			Channel channel = ChannelService.getChannelById(channelId);
-			if (channel == null || StringUtils.isBlank(channel.getId())) {
-				return;
-			}
-			sendIncomingWebhook(newTask, channel, webhook);
-		} catch (Exception ex) {
-			Ivy.log().error("Failed to notify channel Id {0} on the new task Id {1}: {2}", channelId, newTask.getId(),
-					ex);
+		String teamId = TeamService.getTeamIdByTeamName(Ivy.var().get("mattermost.teamName"));
+		if (StringUtils.isBlank(teamId)) {
+			return;
 		}
+
+		IncomingWebhook webhook = IncomingWebhookService.getIncommingWebhookId(channelId, teamId);
+		if (webhook == null || StringUtils.isBlank(webhook.getId())) {
+			return;
+		}
+
+		Channel channel = ChannelService.getChannelById(channelId);
+		if (channel == null || StringUtils.isBlank(channel.getId())) {
+			return;
+		}
+
+		sendIncomingWebhook(newTask, channel, webhook);
 	}
 
-	private void sendIncomingWebhook(ITask newTask, Channel channel, IncomingWebhook webhook)
-			throws JsonProcessingException {
-		IncomingWebhookParameter parameter = prepareIncomingWebhookParameter(newTask, channel);
-		IncomingWebhookService.sendIncomingWebhook(parameter, webhook.getId());
+	private void sendIncomingWebhook(ITask newTask, Channel channel, IncomingWebhook webhook) {
+		try {
+			IncomingWebhookParameter parameter = prepareIncomingWebhookParameter(newTask, channel);
+			IncomingWebhookService.sendIncomingWebhook(parameter, webhook.getId());
+		} catch (Exception ex) {
+			Ivy.log().error("Failed to notify channel Id {0} on the new task Id {1}: {2}", channel.getId(),
+					newTask.getId(), ex);
+		}
 	}
 
 	private IncomingWebhookParameter prepareIncomingWebhookParameter(ITask newTask, Channel channel) {

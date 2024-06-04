@@ -7,12 +7,3 @@
 #
 Variables:
 #  myVariable: value
-  mattermost:
-    # The base URL of matter most
-    baseUrl: "http://localhost:8065"
-    # Personal access tokens function similarly to session tokens and can be used by integrations to authenticate against the REST API.
-    accessToken: "b89ygqfd3bydprsnqjyn89m8tw"
-    # The team name
-    teamName: "axonivy"
-    # The name of bot that will inform the task on the channel
-    botName: "axonivy-bot"

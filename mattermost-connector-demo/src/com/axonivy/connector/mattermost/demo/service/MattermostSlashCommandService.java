@@ -7,7 +7,7 @@ import javax.ws.rs.Path;
 
 import org.apache.commons.lang.StringUtils;
 
-import com.axonivy.connector.mattermost.bo.SlashCommandGetRequestParams;
+import com.axonivy.connector.mattermost.bo.SlashCommandGetRequestParameter;
 import com.axonivy.connector.mattermost.bo.SlashCommandResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -18,11 +18,11 @@ import ch.ivyteam.ivy.process.model.value.SignalCode;
 @PermitAll
 public class MattermostSlashCommandService {
 	@GET
-	public String startProcess(@BeanParam SlashCommandGetRequestParams params) {
+	public String startProcess(@BeanParam SlashCommandGetRequestParameter parameter) {
 		SlashCommandResponse response = new SlashCommandResponse();
 		response.setResponseType("in_channel");
-		response.setText(String.format("Process CheckTeamAbsences has been started by %s", params.getUserName()));
-		Ivy.wf().signals().send(new SignalCode("CheckTeamAbsences"), params.getChannelId());
+		response.setText(String.format("Process CheckTeamAbsences has been started by %s", parameter.getUserName()));
+		Ivy.wf().signals().send(new SignalCode("CheckTeamAbsences"), parameter.getChannelId());
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			return mapper.writeValueAsString(response);
