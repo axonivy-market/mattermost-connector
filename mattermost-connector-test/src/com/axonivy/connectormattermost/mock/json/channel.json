@@ -1,0 +1,16 @@
+{
+  "id": "123456",
+  "create_at": 1622547800000,
+  "update_at": 1622600000000,
+  "delete_at": null,
+  "team_id": "team123",
+  "type": "public",
+  "display_name": "General",
+  "name": "general",
+  "header": "This is the general channel",
+  "purpose": "Discuss general topics",
+  "last_post_at": 1622605000000,
+  "total_msg_count": 100,
+  "extra_update_at": 1622607000000,
+  "creator_id": "user567"
+}

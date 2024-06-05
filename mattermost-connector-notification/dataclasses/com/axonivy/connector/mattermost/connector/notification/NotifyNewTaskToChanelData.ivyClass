@@ -1,0 +1,10 @@
+NotifyNewTaskToChanelData #class
+com.axonivy.connector.mattermost.connector.notification #namespace
+channelId String #field
+channelId PERSISTENT #fieldModifier
+teamId String #field
+teamId PERSISTENT #fieldModifier
+webhookId String #field
+webhookId PERSISTENT #fieldModifier
+channelName String #field
+channelName PERSISTENT #fieldModifier

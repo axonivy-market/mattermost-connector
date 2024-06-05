@@ -1,0 +1,4 @@
+Data #class
+com.axonivy.connector.mattermost.connector.notification #namespace
+incomingWebhookId String #field
+teamId String #field

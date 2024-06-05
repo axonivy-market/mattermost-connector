@@ -1,0 +1,19 @@
+{
+  "format" : "10.0.0",
+  "id" : "18F94E04AF515A4D",
+  "config" : {
+    "data" : "com.axonivy.connector.mattermost.connector.notification.installerData"
+  },
+  "elements" : [ {
+      "id" : "f3",
+      "type" : "ProgramStart",
+      "name" : "Task listener",
+      "config" : {
+        "outerBean" : "com.axonivy.connector.mattermost.notification.MattermostNotificationStart"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 168 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    } ]
+}

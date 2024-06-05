@@ -6,6 +6,15 @@
   <artifactId>mattermost-connector</artifactId>
   <version>10.0.19-SNAPSHOT</version>
   <packaging>iar</packaging>
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>maven.axonivy.com</id>
+      <url>https://maven.axonivy.com</url>
+    </repository>
+  </repositories>
   <build>
     <plugins>
       <plugin>

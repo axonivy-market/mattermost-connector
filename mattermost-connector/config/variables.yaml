@@ -7,3 +7,14 @@
 #
 Variables:
 #  myVariable: value
+  mattermost:
+    # The base URL of matter most
+    baseUrl: ""
+    # Personal access tokens function similarly to session tokens and can be used by integrations to authenticate against the REST API.
+    accessToken: ""
+    # The team name
+    teamName: ""
+    # The name of bot that will inform the task on the channel
+    botName: ""
+    # This variable is used for getting incoming webhook list per page
+    incomingWebhookPerPage: 200
