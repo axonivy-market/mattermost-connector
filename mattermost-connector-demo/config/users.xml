@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<userConfig/>
+<userConfig>
+    <user>
+        <username>leader</username>
+        <password>leader</password>
+        <fullName>Leader</fullName>
+        <emailAddress>leader@axongroup.io</emailAddress>
+        <role>Leader</role>
+    </user>
+    <user>
+        <username>member</username>
+        <password>member</password>
+        <fullName>Member</fullName>
+        <emailAddress>member@axongroup.io</emailAddress>
+        <role>Member</role>
+    </user>
+</userConfig>

@@ -1,0 +1,11 @@
+[
+	{
+		"id": "12345",
+		"create_at": 1627873200000,
+		"update_at": 1627963200000,
+		"delete_at": null,
+		"channel_id": "channelId",
+		"description": "This is a description of the channel.",
+		"display_name": "Channel Display Name"
+	}
+]

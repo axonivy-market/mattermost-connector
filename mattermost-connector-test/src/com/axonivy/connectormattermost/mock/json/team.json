@@ -1,0 +1,15 @@
+{
+  "id": "12345",
+  "create_at": 1622547800000,
+  "update_at": 1622600000000,
+  "delete_at": null,
+  "display_name": "Project Alpha",
+  "name": "project_alpha",
+  "description": "This is the main project channel for Project Alpha.",
+  "email": "project_alpha@example.com",
+  "type": "public",
+  "allowed_domains": "example.com",
+  "invite_id": "inv12345",
+  "allow_open_invite": true,
+  "policy_id": "policy7890"
+}

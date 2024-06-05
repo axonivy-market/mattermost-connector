@@ -1,0 +1,107 @@
+{
+  "format" : "10.0.0",
+  "id" : "18F952928A1574A7",
+  "config" : {
+    "data" : "com.axonivy.connector.mattermost.connector.demo.MattermostConnectorWebhookDemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "SignalStartEvent",
+      "name" : "Check Team Absences",
+      "config" : {
+        "signalCode" : "CheckTeamAbsences",
+        "output" : {
+          "map" : {
+            "out.channelId" : "signal.getSignalData() as String"
+          },
+          "code" : [
+            "import com.axonivy.connector.mattermost.enums.CustomField;",
+            "ivy.case.customFields().stringField(CustomField.CHANNEL_ID.getFieldName()).set(out.channelId);"
+          ]
+        },
+        "attachToBusinessCase" : "false",
+        "tags" : "demo"
+      },
+      "visual" : {
+        "at" : { "x" : 104, "y" : 112 },
+        "labelOffset" : { "x" : 17, "y" : -23 }
+      },
+      "connect" : { "id" : "f3", "to" : "f2" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 784, "y" : 112 }
+      }
+    }, {
+      "id" : "f2",
+      "type" : "TaskSwitchEvent",
+      "name" : "Check team absences",
+      "config" : {
+        "task" : {
+          "name" : "Check Team Absences",
+          "responsible" : {
+            "role" : "Leader"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 112 },
+        "labelOffset" : { "x" : 14, "y" : 34 }
+      },
+      "connect" : { "id" : "f6", "to" : "f5" }
+    }, {
+      "id" : "f5",
+      "type" : "DialogCall",
+      "name" : "TeamAbsences",
+      "config" : {
+        "dialogId" : "com.axonivy.connector.mattermost.connector.demo.TeamAbsences",
+        "startMethod" : "start()",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.message" : "result.message"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 360, "y" : 112 }
+      },
+      "connect" : { "id" : "f17", "to" : "f16" }
+    }, {
+      "id" : "f7",
+      "type" : "Script",
+      "name" : "Send message to channel",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import com.axonivy.connector.mattermost.bo.IncomingWebhookParameter;",
+            "import com.axonivy.connector.mattermost.demo.service.MattermostWebhookService;",
+            "MattermostWebhookService service = new MattermostWebhookService();",
+            "service.sendMessageToMattermostChannel(in.channelId, \"Absence Summary: \" + in.message);"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 648, "y" : 112 }
+      },
+      "connect" : { "id" : "f4", "to" : "f1" }
+    }, {
+      "id" : "f16",
+      "type" : "TaskSwitchEvent",
+      "name" : "Send message to channel",
+      "config" : {
+        "task" : {
+          "name" : "Send message to channel",
+          "responsible" : {
+            "role" : "SYSTEM"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 504, "y" : 112 },
+        "labelOffset" : { "x" : 14, "y" : 34 }
+      },
+      "connect" : { "id" : "f8", "to" : "f7" }
+    } ]
+}

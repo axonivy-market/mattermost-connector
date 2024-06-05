@@ -1,0 +1,6 @@
+MattermostConnectorWebhookDemoData #class
+com.axonivy.connector.mattermost.connector.demo #namespace
+message String #field
+message PERSISTENT #fieldModifier
+channelId String #field
+channelId PERSISTENT #fieldModifier
