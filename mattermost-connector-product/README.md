@@ -1,11 +1,11 @@
 # Mattermost Connector
 
-AxonIvy’s mattermost connector helps you to accelerate process automation initiatives by integrating Mattermost features into your process application within no time. This connector:
+Axon Ivy’s mattermost connector helps you to accelerate process automation initiatives by integrating Mattermost features into your process application within no time. This connector:
 
 - Gives you full power to the [Mattermost's APIs](https://api.mattermost.com/).
-- Allow you to start the AxonIvy process by hitting the slash command key from the mattermost's channel.
-- Allow you to send a message to the mattermost's channel from the AxonIvy workplace.
-- Notifies users on the channel for new AxonIvy workflow Tasks.
+- Allow you to start the Axon Ivy process by hitting the slash command key from the mattermost's channel.
+- Allow you to send a message to the mattermost's channel from the Axon Ivy workplace.
+- Notifies users on the channel for new Axon Ivy workflow Tasks.
 - Supports you with an easy-to-copy demo implementation to reduce your integration effort.
 
 ## Demo
