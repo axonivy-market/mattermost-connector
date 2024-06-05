@@ -1,12 +1,24 @@
 # Mattermost Connector
 
-Mattermost is a messaging platform for teams, providing channels for organized communication and collaboration in workplaces. It's known for its ease of use and integration with other tools, helping teams streamline their workflows.
+AxonIvy’s mattermost connector helps you to accelerate process automation initiatives by integrating Mattermost features into your process application within no time. This connector:
+
+- Gives you full power to the [Mattermost's APIs](https://api.mattermost.com/).
+- Allow you to start the AxonIvy process by hitting the slash command key from the mattermost's channel.
+- Allow you to send a message to the mattermost's channel from the AxonIvy workplace.
+- Notifies users on the channel for new AxonIvy workflow Tasks.
+- Supports you with an easy-to-copy demo implementation to reduce your integration effort.
 
 ## Demo
 
-1. Call Slash command on the masttermost instance's chat
+1. Hit the slash command key on the channel's chat.
+The Axon Ivy process will be triggered and create a new task.
+The task's information will be sent to the channel by a message.
+
 ![call-slash-command](images/slash-command.png)
+
 2. Click on the link, start and finish task.
+The data from this task will be sent back to the channel.
+
 ![task-notification-from-ivy](images/task-notification-from-ivy.png)
 
 ### Setup
