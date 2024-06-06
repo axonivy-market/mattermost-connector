@@ -1,7 +1,7 @@
-# MY-PRODUCT-NAME
+# mattermost-connector
 
-[![CI Build](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml)
+[![CI Build](https://github.com/axonivy-market/mattermost-connector/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/mattermost-connector/actions/workflows/ci.yml)
 
-"YOUR SHORT DESCRIPTION GOES HERE"
+Mattermost enhances team messaging for streamlined workflows and better collaboration.
 
-Read our [documentation](MY-PRODUCT-NAME-product/README.md).
+Read our [documentation](mattermost-connector-product/README.md).
