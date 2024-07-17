@@ -8,4 +8,4 @@ on:
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@feature/MARP-626-Fix-for-Dev-Fail-on-Market-Monitor
+    uses: axonivy-market/github-workflows/.github/workflows/dev-10.yml@feature/MARP-626-Fix-for-Dev-Fail-on-Market-Monitor
