@@ -1,0 +1,11 @@
+name: Dev-Build
+
+on:
+  push:
+  schedule:
+    - cron:  '21 21 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@feature/MARP-626-Fix-for-Dev-Fail-on-Market-Monitor
