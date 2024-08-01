@@ -52,7 +52,7 @@
         "clientErrorCode" : "ivy:error:rest:client",
         "queryParams" : {
           "page" : "",
-          "per_page" : "Integer.parseInt(ivy.var.mattermost_incomingWebhookPerPage)",
+          "per_page" : "Integer.parseInt(ivy.var.get(\"mattermost.incomingWebhookPerPage\"))",
           "team_id" : "in.teamId"
         },
         "statusErrorCode" : "ivy:error:rest:client",
