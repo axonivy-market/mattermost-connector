@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "18F94E04AF515A4D",
   "config" : {
     "data" : "com.axonivy.connector.mattermost.connector.notification.installerData"
@@ -9,7 +9,8 @@
       "type" : "ProgramStart",
       "name" : "Task listener",
       "config" : {
-        "outerBean" : "com.axonivy.connector.mattermost.notification.MattermostNotificationStart"
+        "javaClass" : "com.axonivy.connector.mattermost.notification.MattermostNotificationStart",
+        "link" : "eventLink.ivp"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 168 },
