@@ -3,7 +3,7 @@
   <groupId>com.axonivy.connector.mattermost</groupId>
   <name>mattermost-connector</name>
   <artifactId>mattermost-connector-modules</artifactId>
-  <version>10.0.20-SNAPSHOT</version>
+  <version>10.0.20</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -16,7 +16,7 @@
 
   <scm>
     <developerConnection>scm:git:https://github.com/axonivy-market/${project.name}.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>v10.0.20</tag>
   </scm>
 
   <build>
