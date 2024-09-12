@@ -1,14 +1,14 @@
-# Mattermost Connector
+# Mattermost Konnektor
 
-Axon Ivy’s mattermost connector helps you to accelerate process automation initiatives by integrating Mattermost features into your process application within no time. 
+Der Mattermost-Konnektor von Axon Ivy integriert Mattermost-Funktionen in deine Axon Ivy Prozessanwendung.
 
-This connector:
+Dieser Konnektor:
 
-- supports you with a demo implementation to reduce your integration effort.
-- gives you full power to the [Mattermost's APIs](https://api.mattermost.com/).
-- allow you to start the Axon Ivy process by hitting the slash command key from the mattermost's channel.
-- allow you to send a message to the mattermost's channel from the Axon Ivy workplace.
-- notifies users on the channel for new Axon Ivy workflow Tasks.
+- unterstützt dich mit einer Demo-Implementierung, um den Integrationsaufwand zu reduzieren.
+- gewährleistet vollen Zugriff auf die APIs von [Mattermost](https://api.mattermost.com/).
+- ermöglicht es dir, den Axon Ivy-Prozess durch Eingabe des Slash-Kommandos im Mattermost-Kanal zu starten.
+- ermöglicht das Senden von Nachrichten an den Mattermost-Kanal aus der Axon Ivy-Oberfläche.
+- benachrichtigt Benutzer im Kanal über neue Axon Ivy-Workflow-Aufgaben.
 
 ## Demo
 
@@ -51,3 +51,4 @@ and replace the values with your given setup.
 ```
 @variables.yaml@
 ```
+
