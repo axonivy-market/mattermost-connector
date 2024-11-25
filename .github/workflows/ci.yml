@@ -4,12 +4,12 @@ on:
   push:
   pull_request:
   schedule:
-    - cron:  '21 21 * * *'
+    - cron: '21 21 * * *'
   workflow_dispatch:
 
 jobs:
-  steps:
-   - uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v4
-  with:
-    javaVersion: 21
-    mvnVersion: 3.9.8
+  build:
+    uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v4
+    with:
+      javaVersion: 21
+      mvnVersion: 3.9.8
