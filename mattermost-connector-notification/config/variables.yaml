@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/variables.json
 # == Variables ==
 # 
 # You can define here your project Variables.
@@ -6,7 +7,7 @@
 # '<project>/Config/_<environment>/variables.yaml
 #
 Variables:
-#  myVariable: value
+  #  myVariable: value
   mattermost:
     notification:
       # enables the Mattermost notification for new tasks

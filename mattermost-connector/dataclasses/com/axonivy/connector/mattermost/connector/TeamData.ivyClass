@@ -1,5 +1,0 @@
-TeamData #class
-com.axonivy.connector.mattermost.connector #namespace
-teamId String #field
-error ch.ivyteam.ivy.bpm.error.BpmError #field
-teamName String #field

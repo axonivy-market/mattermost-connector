@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "18F9A02E199B10A5",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -10,10 +10,10 @@
       "type" : "CallSubStart",
       "name" : "getChannelById(String)",
       "config" : {
-        "callSignature" : "getChannelById",
+        "signature" : "getChannelById",
         "input" : {
           "params" : [
-            { "name" : "channelId", "type" : "String" }
+            { "name" : "channelId", "type" : "String", "desc" : "" }
           ],
           "map" : {
             "out.channelId" : "param.channelId"
@@ -21,18 +21,22 @@
         },
         "result" : {
           "params" : [
-            { "name" : "channel", "type" : "com.your.mattermost.url.client.Channel" }
+            { "name" : "channel", "type" : "com.your.mattermost.url.client.Channel", "desc" : "" }
           ],
           "map" : {
             "result.channel" : "in.channel"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -44,17 +48,21 @@
       "type" : "RestClientCall",
       "name" : "Get channel by Id",
       "config" : {
-        "path" : "/api/v4/channels/{channel_id}",
-        "clientId" : "402ef8e2-8431-4198-b4c7-be6000e557c9",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.channel" : "result"
+        "target" : {
+          "clientId" : "402ef8e2-8431-4198-b4c7-be6000e557c9",
+          "path" : "/api/v4/channels/{channel_id}",
+          "templateParams" : {
+            "channel_id" : "in.channelId"
+          }
         },
-        "templateParams" : {
-          "channel_id" : "in.channelId"
-        },
-        "resultType" : "com.your.mattermost.url.client.Channel"
+        "response" : {
+          "entity" : {
+            "type" : "com.your.mattermost.url.client.Channel",
+            "map" : {
+              "out.channel" : "result"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 232, "y" : 64 }
@@ -73,8 +81,12 @@
           "visual" : {
             "at" : { "x" : 288, "y" : 98 }
           },
-          "connect" : { "id" : "f6", "to" : "f1", "via" : [ { "x" : 368, "y" : 98 } ] }
+          "connect" : [
+            { "id" : "f6", "to" : "f1", "via" : [ { "x" : 368, "y" : 98 } ] }
+          ]
         } ],
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     } ]
 }

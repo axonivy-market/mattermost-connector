@@ -1,0 +1,16 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "TeamData",
+  "namespace" : "com.axonivy.connector.mattermost.connector",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "teamId",
+    "type" : "String"
+  }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
+  }, {
+    "name" : "teamName",
+    "type" : "String"
+  } ]
+}

@@ -1,6 +1,0 @@
-IncomingWebhookData #class
-com.axonivy.connector.mattermost.connector #namespace
-channelId String #field
-teamId String #field
-webhook com.your.mattermost.url.client.IncomingWebhook #field
-error ch.ivyteam.ivy.bpm.error.BpmError #field

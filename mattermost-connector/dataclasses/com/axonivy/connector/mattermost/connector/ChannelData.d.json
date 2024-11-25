@@ -1,0 +1,16 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "ChannelData",
+  "namespace" : "com.axonivy.connector.mattermost.connector",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "channelId",
+    "type" : "String"
+  }, {
+    "name" : "channel",
+    "type" : "com.your.mattermost.url.client.Channel"
+  }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
+  } ]
+}

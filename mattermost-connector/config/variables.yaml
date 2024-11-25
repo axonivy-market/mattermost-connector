@@ -1,12 +1,13 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/variables.json
 # == Variables ==
-# 
+#
 # You can define here your project Variables.
 # If you want to define/override a Variable for a specific Environment, 
 # add an additional ‘variables.yaml’ file in a subdirectory in the ‘Config’ folder: 
 # '<project>/Config/_<environment>/variables.yaml
 #
 Variables:
-#  myVariable: value
+  #  myVariable: value
   mattermost:
     # The base URL of matter most
     baseUrl: ""
@@ -17,4 +18,4 @@ Variables:
     # The name of bot that will inform the task on the channel
     botName: ""
     # This variable is used for getting incoming webhook list per page
-    incomingWebhookPerPage: 200
+    incomingWebhookPerPage: "200"

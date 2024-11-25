@@ -1,4 +1,0 @@
-Data #class
-com.axonivy.connector.mattermost.connector #namespace
-result List<com.your.mattermost.url.client.ChannelMember> #field
-error String #field
