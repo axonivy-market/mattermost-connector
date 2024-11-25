@@ -8,5 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v4
+  steps:
+   - uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v4
+  with:
+    javaVersion: 21
+    mvnVersion: 3.9.8
