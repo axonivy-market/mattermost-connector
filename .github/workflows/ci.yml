@@ -9,7 +9,4 @@ on:
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v4
-    with:
-      javaVersion: 21
-      mvnVersion: 3.9.8
+    uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v5
