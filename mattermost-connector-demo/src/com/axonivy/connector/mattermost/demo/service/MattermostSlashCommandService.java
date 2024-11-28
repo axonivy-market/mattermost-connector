@@ -12,7 +12,6 @@ import com.axonivy.connector.mattermost.bo.SlashCommandResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ch.ivyteam.ivy.environment.Ivy;
-import ch.ivyteam.ivy.process.model.value.SignalCode;
 
 @Path("/mattermost/slashCommand")
 @PermitAll
@@ -22,7 +21,8 @@ public class MattermostSlashCommandService {
 		SlashCommandResponse response = new SlashCommandResponse();
 		response.setResponseType("in_channel");
 		response.setText(String.format("Process CheckTeamAbsences has been started by %s", parameter.getUserName()));
-		Ivy.wf().signals().send(new SignalCode("CheckTeamAbsences"), parameter.getChannelId());
+		Ivy.wf().signals().create().data(parameter.getChannelId()).makeCurrentTaskPersistent()
+				.send("CheckTeamAbsences");
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			return mapper.writeValueAsString(response);

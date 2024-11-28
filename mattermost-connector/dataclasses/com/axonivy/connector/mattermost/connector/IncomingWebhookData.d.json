@@ -1,0 +1,19 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "IncomingWebhookData",
+  "namespace" : "com.axonivy.connector.mattermost.connector",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "channelId",
+    "type" : "String"
+  }, {
+    "name" : "teamId",
+    "type" : "String"
+  }, {
+    "name" : "webhook",
+    "type" : "com.your.mattermost.url.client.IncomingWebhook"
+  }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
+  } ]
+}

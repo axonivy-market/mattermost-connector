@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "18F9AA4D04244482",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -10,10 +10,10 @@
       "type" : "CallSubStart",
       "name" : "getTeamId(String)",
       "config" : {
-        "callSignature" : "getTeamId",
+        "signature" : "getTeamId",
         "input" : {
           "params" : [
-            { "name" : "teamName", "type" : "String" }
+            { "name" : "teamName", "type" : "String", "desc" : "" }
           ],
           "map" : {
             "out.teamName" : "param.teamName"
@@ -21,19 +21,23 @@
         },
         "result" : {
           "params" : [
-            { "name" : "teamId", "type" : "String" }
+            { "name" : "teamId", "type" : "String", "desc" : "" }
           ],
           "map" : {
             "result.teamId" : "in.teamId"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 64 },
         "labelOffset" : { "x" : 17, "y" : 33 }
       },
-      "connect" : { "id" : "f3", "to" : "f5" }
+      "connect" : [
+        { "id" : "f3", "to" : "f5" }
+      ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -45,17 +49,21 @@
       "type" : "RestClientCall",
       "name" : "Get Team Id by name",
       "config" : {
-        "path" : "/api/v4/teams/name/{name}",
-        "clientId" : "402ef8e2-8431-4198-b4c7-be6000e557c9",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.teamId" : "result.id"
+        "target" : {
+          "clientId" : "402ef8e2-8431-4198-b4c7-be6000e557c9",
+          "path" : "/api/v4/teams/name/{name}",
+          "templateParams" : {
+            "name" : "in.teamName"
+          }
         },
-        "templateParams" : {
-          "name" : "in.teamName"
-        },
-        "resultType" : "com.your.mattermost.url.client.Team"
+        "response" : {
+          "entity" : {
+            "type" : "com.your.mattermost.url.client.Team",
+            "map" : {
+              "out.teamId" : "result.id"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 240, "y" : 63 },
@@ -75,8 +83,12 @@
           "visual" : {
             "at" : { "x" : 304, "y" : 96 }
           },
-          "connect" : { "id" : "f8", "to" : "f1", "via" : [ { "x" : 384, "y" : 96 } ] }
+          "connect" : [
+            { "id" : "f8", "to" : "f1", "via" : [ { "x" : 384, "y" : 96 } ] }
+          ]
         } ],
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     } ]
 }

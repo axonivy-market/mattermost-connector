@@ -18,7 +18,7 @@ public class MattermostNotificationStart extends AbstractProcessStartEventBean {
 
   @Override
   public void poll() {
-    getEventBeanRuntime().setPollTimeInterval(-1); // no poll; we only use start/stop hooks
+    getEventBeanRuntime().poll().disable(); // no poll; we only use start/stop hooks
   }
 
   @Override

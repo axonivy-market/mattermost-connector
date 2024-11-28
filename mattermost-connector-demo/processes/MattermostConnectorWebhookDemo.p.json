@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "18F952928A1574A7",
   "config" : {
     "data" : "com.axonivy.connector.mattermost.connector.demo.MattermostConnectorWebhookDemoData"
@@ -10,6 +10,7 @@
       "name" : "Check Team Absences",
       "config" : {
         "signalCode" : "CheckTeamAbsences",
+        "attachToBusinessCase" : false,
         "output" : {
           "map" : {
             "out.channelId" : "signal.getSignalData() as String"
@@ -18,15 +19,18 @@
             "import com.axonivy.connector.mattermost.enums.CustomField;",
             "ivy.case.customFields().stringField(CustomField.CHANNEL_ID.getFieldName()).set(out.channelId);"
           ]
-        },
-        "attachToBusinessCase" : "false",
-        "tags" : "demo"
+        }
       },
+      "tags" : [
+        "demo"
+      ],
       "visual" : {
         "at" : { "x" : 104, "y" : 112 },
         "labelOffset" : { "x" : 17, "y" : -23 }
       },
-      "connect" : { "id" : "f3", "to" : "f2" }
+      "connect" : [
+        { "id" : "f3", "to" : "f2" }
+      ]
     }, {
       "id" : "f1",
       "type" : "TaskEnd",
@@ -41,7 +45,7 @@
         "task" : {
           "name" : "Check Team Absences",
           "responsible" : {
-            "role" : "Leader"
+            "activator" : "Leader"
           }
         }
       },
@@ -49,14 +53,15 @@
         "at" : { "x" : 232, "y" : 112 },
         "labelOffset" : { "x" : 14, "y" : 34 }
       },
-      "connect" : { "id" : "f6", "to" : "f5" }
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
     }, {
       "id" : "f5",
       "type" : "DialogCall",
       "name" : "TeamAbsences",
       "config" : {
-        "dialogId" : "com.axonivy.connector.mattermost.connector.demo.TeamAbsences",
-        "startMethod" : "start()",
+        "dialog" : "com.axonivy.connector.mattermost.connector.demo.TeamAbsences:start()",
         "output" : {
           "map" : {
             "out" : "in",
@@ -67,7 +72,9 @@
       "visual" : {
         "at" : { "x" : 360, "y" : 112 }
       },
-      "connect" : { "id" : "f17", "to" : "f16" }
+      "connect" : [
+        { "id" : "f17", "to" : "f16" }
+      ]
     }, {
       "id" : "f7",
       "type" : "Script",
@@ -85,7 +92,9 @@
       "visual" : {
         "at" : { "x" : 648, "y" : 112 }
       },
-      "connect" : { "id" : "f4", "to" : "f1" }
+      "connect" : [
+        { "id" : "f4", "to" : "f1" }
+      ]
     }, {
       "id" : "f16",
       "type" : "TaskSwitchEvent",
@@ -94,7 +103,7 @@
         "task" : {
           "name" : "Send message to channel",
           "responsible" : {
-            "role" : "SYSTEM"
+            "activator" : "SYSTEM"
           }
         }
       },
@@ -102,6 +111,8 @@
         "at" : { "x" : 504, "y" : 112 },
         "labelOffset" : { "x" : 14, "y" : 34 }
       },
-      "connect" : { "id" : "f8", "to" : "f7" }
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
     } ]
 }
