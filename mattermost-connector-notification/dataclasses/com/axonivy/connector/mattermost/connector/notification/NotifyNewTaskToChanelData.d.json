@@ -1,0 +1,23 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "NotifyNewTaskToChanelData",
+  "namespace" : "com.axonivy.connector.mattermost.connector.notification",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "channelId",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "teamId",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "webhookId",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "channelName",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

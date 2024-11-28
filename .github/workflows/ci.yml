@@ -4,9 +4,9 @@ on:
   push:
   pull_request:
   schedule:
-    - cron:  '21 21 * * *'
+    - cron: '21 21 * * *'
   workflow_dispatch:
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v4
+    uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v5
