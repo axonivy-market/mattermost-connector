@@ -12,7 +12,7 @@ import ch.ivyteam.ivy.workflow.WorkflowChangeEvent;
 import ch.ivyteam.ivy.workflow.WorkflowChangeEventKind;
 
 public class NewTaskAssignmentListener implements IWorkflowListener {
-
+	private final static String SYSTEM_USER = "System user";
 	private final IWorkflowManager workflowManager;
 	private Consumer<ITask> newTask = task -> {
 	};
@@ -40,9 +40,10 @@ public class NewTaskAssignmentListener implements IWorkflowListener {
 			}
 
 			boolean send = false;
-			if (event.getTaskState() == TaskState.SUSPENDED && !task.activator().isSystemUser()) {
+			if (event.getTaskState() == TaskState.SUSPENDED && !task.responsibles().displayName().contains(SYSTEM_USER)) {
 				switch (event.getEventKind()) {
-				case EVENT_CHANGE_TASK_ACTIVATOR:
+				case EVENT_TASK_RESPONSIBLE_DELETED:
+				case EVENT_TASK_RESPONSIBLE_ADDED:
 				case EVENT_CREATE_TASK_BY_JOINED_TASKS:
 				case EVENT_CREATE_FIRST_TASK_OF_CASE: // task was created by trigger
 														// task has state suspended
