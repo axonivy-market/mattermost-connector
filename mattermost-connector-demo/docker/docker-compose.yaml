@@ -1,0 +1,30 @@
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    environment:
+      POSTGRES_USER: octopus
+      POSTGRES_PASSWORD: octopus_password
+      POSTGRES_DB: octopus
+    ports:
+      - "5544:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "octopus"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  mattermost:
+    build:
+      context: .
+      dockerfile: Dockerfile.mattermost
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      MM_SQLSETTINGS_DRIVERNAME: postgres
+      MM_SQLSETTINGS_DATASOURCE: postgres://octopus:octopus_password@db:5432/octopus?sslmode=disable
+      MM_SERVICESETTINGS_SITEURL: http://localhost:8065
+    ports:
+      - "8065:8065"

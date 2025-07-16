@@ -1,0 +1,4 @@
+FROM mattermost/mattermost-team-edition:latest
+
+COPY --chown=2000:2000 ./config.json /mattermost/config/config.json
+
