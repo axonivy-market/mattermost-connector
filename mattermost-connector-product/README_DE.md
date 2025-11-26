@@ -29,7 +29,7 @@ Dieser Konnektor:
 
 ![task-notification-from-ivy](images/task-notification-from-ivy.png)
 
-### Einrichtung
+### Setup
 
 Mattermost-Instanz
 
