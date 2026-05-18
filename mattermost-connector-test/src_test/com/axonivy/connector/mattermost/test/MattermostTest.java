@@ -50,8 +50,7 @@ public class MattermostTest {
 	private static ComposeContainer db2 = new ComposeContainer(
 			new File("../mattermost-connector-demo/docker/docker-compose.yaml"))
 			.withExposedService("db", 5432, Wait.forLogMessage(".*database system is ready to accept connections.*", 1).withStartupTimeout(Duration.ofMinutes(2)))
-			.withExposedService("mattermost", 8065)
-			.withLocalCompose(true);
+			.withExposedService("mattermost", 8065);
 
 	@BeforeEach
 	void beforeEach(AppFixture fixture) {
