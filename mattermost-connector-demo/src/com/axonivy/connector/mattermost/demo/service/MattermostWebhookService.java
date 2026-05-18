@@ -1,6 +1,6 @@
 package com.axonivy.connector.mattermost.demo.service;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.axonivy.connector.mattermost.bo.IncomingWebhookParameter;
 import com.axonivy.connector.mattermost.service.ChannelService;
