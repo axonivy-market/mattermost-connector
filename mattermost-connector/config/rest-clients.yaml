@@ -1,6 +1,7 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/13.2.1/rest-clients.json
 RestClients:
   #There is also a work-in-progress [Postman API reference](https://documenter.getpostman.com/view/4508214/RW8FERUn).
-  Mattermost API (Mattermost API Reference):
+  Mattermost:
     UUID: 402ef8e2-8431-4198-b4c7-be6000e557c9
     Url: ${ivy.var.mattermost.baseUrl}
     Features:
