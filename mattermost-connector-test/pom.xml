@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.axonivy.ivy.api</groupId>
     <artifactId>ivy-project-parent</artifactId>
-    <version>13.1.1</version>
-    <relativePath />
+    <version>13.2.0</version>
+    <relativePath></relativePath>
   </parent>
   <groupId>com.axonivy.connector.mattermost</groupId>
   <artifactId>mattermost-connector-test</artifactId>
-  <version>13.1.2-SNAPSHOT</version>
+  <version>13.2.0-SNAPSHOT</version>
   <packaging>iar</packaging>
   <dependencies>
     <dependency>
@@ -19,8 +20,8 @@
       <type>iar</type>
     </dependency>
     <dependency>
-      <groupId>com.axonivy.ivy.test</groupId>
-      <artifactId>unit-tester</artifactId>
+      <groupId>com.axonivy.ivy.api.test</groupId>
+      <artifactId>ivy-test-api</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -30,13 +31,13 @@
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>1.21.0</version>
+      <version>1.21.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>testcontainers</artifactId>
-      <version>1.20.1</version>
+      <version>2.0.5</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>

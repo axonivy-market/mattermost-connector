@@ -5,7 +5,7 @@ import javax.ws.rs.BeanParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.axonivy.connector.mattermost.bo.SlashCommandGetRequestParameter;
 import com.axonivy.connector.mattermost.bo.SlashCommandResponse;
