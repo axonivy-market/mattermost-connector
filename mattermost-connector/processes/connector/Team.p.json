@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "18F9AA4D04244482",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -50,7 +50,7 @@
       "name" : "Get Team Id by name",
       "config" : {
         "target" : {
-          "clientId" : "402ef8e2-8431-4198-b4c7-be6000e557c9",
+          "clientId" : "Mattermost",
           "path" : "/api/v4/teams/name/{name}",
           "templateParams" : {
             "name" : "in.teamName"

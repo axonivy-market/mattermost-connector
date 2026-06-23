@@ -1,15 +1,10 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "MattermostConnectorWebhookDemoData",
   "namespace" : "com.axonivy.connector.mattermost.connector.demo",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "message",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "message"
   }, {
-    "name" : "channelId",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "channelId"
   } ]
 }

@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/users.json
+Users:
+  - Name: leader
+    Password: leader
+    FullName: Leader
+    Mail: leader@axongroup.io
+    Roles:
+      - Leader
+  - Name: member
+    Password: member
+    FullName: Member
+    Mail: member@axongroup.io
+    Roles:
+      - Member
