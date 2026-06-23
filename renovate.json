@@ -5,8 +5,8 @@
   ],
   "baseBranchPatterns": [
     "master",
-    "release/*",
-    "dev/*"
+    "/^release\\/.*/",
+    "/^dev\\/.*/"
   ],
   "labels": [
     "skip-changelog"
@@ -18,8 +18,8 @@
       "description": "Disable major upgrades for branches",
       "matchBaseBranches": [
         "master",
-        "release/*",
-        "dev/*"
+        "/^release/.*/",
+        "/^dev/.*/"
       ],
       "matchUpdateTypes": [
         "major"
