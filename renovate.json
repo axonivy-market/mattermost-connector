@@ -2,5 +2,29 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "baseBranchPatterns": [
+    "master",
+    "release/*",
+    "dev/*"
+  ],
+  "labels": [
+    "skip-changelog"
+  ],
+  "rebaseWhen": "never",
+  "semanticCommits": "disabled",
+  "packageRules": [
+    {
+      "description": "Disable major upgrades for branches",
+      "matchBaseBranches": [
+        "master",
+        "release/*",
+        "dev/*"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "dependencyDashboardApproval": true
+    }
   ]
 }
