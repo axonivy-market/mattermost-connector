@@ -14,6 +14,6 @@ permissions:
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/ci.yml@v6
+    uses: phhung-axonivy/github-workflows/.github/workflows/ci.yml@feature/MARP-4588-Improve-vulnerability-scanning-apply-zap
     secrets:
       mvnArgs: -Dmattermost.appToken=${{ secrets.MATTERMOST_TEST_CONTAINER_ADMIN_TOKEN }}
