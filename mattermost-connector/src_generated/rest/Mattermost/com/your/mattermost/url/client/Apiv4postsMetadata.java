@@ -22,7 +22,7 @@ import com.your.mattermost.url.client.Apiv4postsMetadataPriority;
 /**
  * A JSON object to add post metadata, e.g the post&#x27;s priority
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-05-15T16:32:52.937863200+07:00[Asia/Saigon]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-05-15T16:32:52.937863200+07:00[Asia/Saigon]")
 public class Apiv4postsMetadata {
   @JsonProperty("priority")
   private Apiv4postsMetadataPriority priority = null;
