@@ -3,6 +3,7 @@
   "simpleName" : "TeamAbsencesData",
   "namespace" : "com.axonivy.connector.mattermost.connector.demo.TeamAbsences",
   "fields" : [ {
-    "name" : "message"
+    "name" : "message",
+    "modifiers" : [ ]
   } ]
 }

@@ -3,9 +3,9 @@ package com.axonivy.connector.mattermost.service;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 import com.axonivy.connector.mattermost.bo.IncomingWebhookParameter;
 import com.axonivy.connector.mattermost.client.MattermostClient;

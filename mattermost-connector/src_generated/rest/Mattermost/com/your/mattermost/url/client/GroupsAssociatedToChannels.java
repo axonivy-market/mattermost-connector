@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * a map of channel id(s) to the set of groups that constrain the corresponding channel in a team
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-05-15T16:32:52.937863200+07:00[Asia/Saigon]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-05-15T16:32:52.937863200+07:00[Asia/Saigon]")
 public class GroupsAssociatedToChannels extends HashMap<String, List> {
 
   @Override
