@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
 
-import ch.ivyteam.ivy.rest.client.FeatureConfig;
+import ch.ivyteam.ivy.rest.client.feature.FeatureConfig;
 
 public class MattermostAuthorizationFilter implements ClientRequestFilter {
 	private static final String AUTHORIZATION = "Authorization";
@@ -21,7 +21,7 @@ public class MattermostAuthorizationFilter implements ClientRequestFilter {
 			return;
 		}
 
-		var config = new FeatureConfig(ctxt.getConfiguration(), MattermostAuthFeature.class);
+		var config = FeatureConfig.of(ctxt.getConfiguration(), MattermostAuthFeature.class);
 		String accessToken = config.readMandatory(Property.ACCESS_TOKEN);
 		ctxt.getHeaders().add(AUTHORIZATION, String.format(BEARER_TOKEN, accessToken));
 	}
