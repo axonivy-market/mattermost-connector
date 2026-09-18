@@ -1,30 +1,30 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
-  "id" : "18F9A02E199B10A5",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-2.json",
+  "id" : "18F9AA4D04244482",
   "kind" : "CALLABLE_SUB",
   "config" : {
-    "data" : "com.axonivy.connector.mattermost.connector.ChannelData"
+    "data" : "com.axonivy.connector.mattermost.connector.TeamData"
   },
   "elements" : [ {
       "id" : "f0",
       "type" : "CallSubStart",
-      "name" : "getChannelById(String)",
+      "name" : "getTeamId(String)",
       "config" : {
-        "signature" : "getChannelById",
+        "signature" : "getTeamId",
         "input" : {
           "params" : [
-            { "name" : "channelId", "type" : "String", "desc" : "" }
+            { "name" : "teamName", "type" : "String", "desc" : "" }
           ],
           "map" : {
-            "out.channelId" : "param.channelId"
+            "out.teamName" : "param.teamName"
           }
         },
         "result" : {
           "params" : [
-            { "name" : "channel", "type" : "com.your.mattermost.url.client.Channel", "desc" : "" }
+            { "name" : "teamId", "type" : "String", "desc" : "" }
           ],
           "map" : {
-            "result.channel" : "in.channel"
+            "result.teamId" : "in.teamId"
           }
         }
       },
@@ -32,43 +32,45 @@
         "connector"
       ],
       "visual" : {
-        "at" : { "x" : 96, "y" : 64 }
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 17, "y" : 33 }
       },
       "connect" : [
-        { "id" : "f4", "to" : "f3" }
+        { "id" : "f3", "to" : "f5" }
       ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
       "visual" : {
-        "at" : { "x" : 368, "y" : 64 }
+        "at" : { "x" : 384, "y" : 64 }
       }
     }, {
-      "id" : "f3",
+      "id" : "f5",
       "type" : "RestClientCall",
-      "name" : "Get channel by Id",
+      "name" : "Get Team Id by name",
       "config" : {
         "target" : {
           "clientId" : "Mattermost",
-          "path" : "/api/v4/channels/{channel_id}",
+          "path" : "/api/v4/teams/name/{name}",
           "templateParams" : {
-            "channel_id" : "in.channelId"
+            "name" : "in.teamName"
           }
         },
         "response" : {
           "entity" : {
-            "type" : "com.your.mattermost.url.client.Channel",
+            "type" : "com.your.mattermost.url.client.Team",
             "map" : {
-              "out.channel" : "result"
+              "out.teamId" : "result.id"
             }
           }
         }
       },
       "visual" : {
-        "at" : { "x" : 232, "y" : 64 }
+        "at" : { "x" : 240, "y" : 63 },
+        "size" : { "width" : 128, "height" : 63 }
       },
       "boundaries" : [ {
-          "id" : "f5",
+          "id" : "f7",
           "type" : "ErrorBoundaryEvent",
           "config" : {
             "output" : {
@@ -79,10 +81,10 @@
             }
           },
           "visual" : {
-            "at" : { "x" : 288, "y" : 98 }
+            "at" : { "x" : 304, "y" : 96 }
           },
           "connect" : [
-            { "id" : "f6", "to" : "f1", "via" : [ { "x" : 368, "y" : 98 } ] }
+            { "id" : "f8", "to" : "f1", "via" : [ { "x" : 384, "y" : 96 } ] }
           ]
         } ],
       "connect" : [

@@ -2,7 +2,7 @@ package com.axonivy.connector.mattermost.listener;
 
 import java.util.function.Consumer;
 
-import ch.ivyteam.ivy.application.ActivityState;
+import ch.ivyteam.ivy.application.app.state.ActivityState;
 import ch.ivyteam.ivy.workflow.ITask;
 import ch.ivyteam.ivy.workflow.IWorkflowEvent;
 import ch.ivyteam.ivy.workflow.IWorkflowListener;
@@ -14,7 +14,7 @@ import ch.ivyteam.ivy.workflow.WorkflowChangeEventKind;
 public class NewTaskAssignmentListener implements IWorkflowListener {
 	private final static String SYSTEM_USER = "System user";
 	private final IWorkflowManager workflowManager;
-	private Consumer<ITask> newTask = task -> {
+	private Consumer<ITask> newTask = _ -> {
 	};
 
 	public NewTaskAssignmentListener(IWorkflowManager workflowManager) {
@@ -35,26 +35,26 @@ public class NewTaskAssignmentListener implements IWorkflowListener {
 				return;
 			}
 
-			if (task.getApplication().getActivityState() != ActivityState.ACTIVE) {
+			if (task.getApplication().state().activityState() != ActivityState.ACTIVE) {
 				return;
 			}
 
 			boolean send = false;
 			if (event.getTaskState() == TaskState.SUSPENDED && !task.responsibles().displayName().contains(SYSTEM_USER)) {
 				switch (event.getEventKind()) {
-				case EVENT_TASK_RESPONSIBLE_DELETED:
-				case EVENT_TASK_RESPONSIBLE_ADDED:
-				case EVENT_CREATE_TASK_BY_JOINED_TASKS:
-				case EVENT_CREATE_FIRST_TASK_OF_CASE: // task was created by trigger
-														// task has state suspended
-				case EVENT_REDO_TASK:
-				case EVENT_TASK_DELAY_EXPIRED:
-				case EVENT_CHANGE_TASK_ACTIVATOR_BY_TIMEOUT:
-					send = true;
-					break;
-				default:
-					// do nothing
-					break;
+					case EVENT_TASK_RESPONSIBLE_DELETED:
+					case EVENT_TASK_RESPONSIBLE_ADDED:
+					case EVENT_CREATE_TASK_BY_JOINED_TASKS:
+					case EVENT_CREATE_FIRST_TASK_OF_CASE: // task was created by trigger
+						// task has state suspended
+					case EVENT_REDO_TASK:
+					case EVENT_TASK_DELAY_EXPIRED:
+					case EVENT_CHANGE_TASK_ACTIVATOR_BY_TIMEOUT:
+						send = true;
+						break;
+					default:
+						// do nothing
+						break;
 				}
 				if (send) {
 					newTask.accept(task);

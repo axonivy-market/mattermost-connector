@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * V4BotsBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-05-15T16:32:52.937863200+07:00[Asia/Saigon]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-05-15T16:32:52.937863200+07:00[Asia/Saigon]")
 public class V4BotsBody {
   @JsonProperty("username")
   private String username = null;

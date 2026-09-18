@@ -1,6 +1,6 @@
 package com.axonivy.connector.mattermost.client;
 
-import javax.ws.rs.client.WebTarget;
+import jakarta.ws.rs.client.WebTarget;
 
 import ch.ivyteam.ivy.environment.Ivy;
 
