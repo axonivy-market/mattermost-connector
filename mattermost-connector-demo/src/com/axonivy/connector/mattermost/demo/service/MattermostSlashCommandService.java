@@ -1,9 +1,9 @@
 package com.axonivy.connector.mattermost.demo.service;
 
-import javax.annotation.security.PermitAll;
-import javax.ws.rs.BeanParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.annotation.security.PermitAll;
+import jakarta.ws.rs.BeanParam;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 
 import org.apache.commons.lang3.StringUtils;
 

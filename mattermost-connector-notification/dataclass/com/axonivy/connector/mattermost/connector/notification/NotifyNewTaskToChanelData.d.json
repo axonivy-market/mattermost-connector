@@ -1,0 +1,14 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "NotifyNewTaskToChanelData",
+  "namespace" : "com.axonivy.connector.mattermost.connector.notification",
+  "fields" : [ {
+    "name" : "channelId"
+  }, {
+    "name" : "teamId"
+  }, {
+    "name" : "webhookId"
+  }, {
+    "name" : "channelName"
+  } ]
+}

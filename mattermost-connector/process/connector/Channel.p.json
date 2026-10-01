@@ -1,0 +1,92 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/process.json",
+  "id" : "18F9A02E199B10A5",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.connector.mattermost.connector.ChannelData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "getChannelById(String)",
+      "config" : {
+        "signature" : "getChannelById",
+        "input" : {
+          "params" : [
+            { "name" : "channelId", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.channelId" : "param.channelId"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "channel", "type" : "com.your.mattermost.url.client.Channel", "desc" : "" }
+          ],
+          "map" : {
+            "result.channel" : "in.channel"
+          }
+        }
+      },
+      "tags" : [
+        "connector"
+      ],
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 368, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Get channel by Id",
+      "config" : {
+        "target" : {
+          "clientId" : "Mattermost",
+          "path" : "/api/v4/channels/{channel_id}",
+          "templateParams" : {
+            "channel_id" : "in.channelId"
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.your.mattermost.url.client.Channel",
+            "map" : {
+              "out.channel" : "result"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 64 }
+      },
+      "boundaries" : [ {
+          "id" : "f5",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 288, "y" : 98 }
+          },
+          "connect" : [
+            { "id" : "f6", "to" : "f1", "via" : [ { "x" : 368, "y" : 98 } ] }
+          ]
+        } ],
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    } ]
+}
