@@ -25,7 +25,7 @@ import java.util.List;
  * InlineResponse20017
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-05-15T16:32:52.937863200+07:00[Asia/Saigon]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-05-15T16:32:52.937863200+07:00[Asia/Saigon]")
 public class InlineResponse20017 {
   @JsonProperty("active")
   private List<PluginManifest> active = null;
