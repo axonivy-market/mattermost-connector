@@ -13,6 +13,6 @@ permissions:
 
 jobs:
   build:
-    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v6
+    uses: axonivy-market/github-workflows/.github/workflows/dev.yml@v14
     secrets:
       mvnArgs: -Dmattermost.appToken=${{ secrets.MATTERMOST_TEST_CONTAINER_ADMIN_TOKEN }}
