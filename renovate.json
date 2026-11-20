@@ -1,31 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
-  ],
-  "baseBranchPatterns": [
-    "master",
-    "/^release\\/.*/",
-    "/^dev\\/.*/"
-  ],
-  "labels": [
-    "skip-changelog"
-  ],
-  "schedule": ["before 5am on monday"],
-  "rebaseWhen": "never",
-  "semanticCommits": "disabled",
-  "packageRules": [
-    {
-      "description": "Disable major upgrades for branches",
-      "matchBaseBranches": [
-        "master",
-        "/^release/.*/",
-        "/^dev/.*/"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "dependencyDashboardApproval": true
-    }
+    "local>axonivy-market/renovate-config"
   ]
 }
